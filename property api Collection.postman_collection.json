@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "594e71d1-2125-403f-b473-aeb858691b59",
+		"name": "property api Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29807040"
+	},
+	"item": [
+		{
+			"name": "users/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"Password@123\",\r\n  \"mobileNo\": \"1234567890\",\r\n  \"companyName\": \"Example Company\",\r\n  \"address\": {\r\n    \"street\": \"123 Example St\",\r\n    \"city\": \"Example City\",\r\n    \"state\": \"Example State\",\r\n    \"zipCode\": \"12345\"\r\n  },\r\n  \"roleOf\": \"landlord\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/property/registerProperty",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"images\": \"https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg \",\r\n        \"price\": 250000,\r\n        \"postedAt\": \"Owner\",\r\n        \"propertyType\": \"Commercial\",\r\n        \"propertyCategory\": \"apartment\",\r\n        \"address\": { \"street\": \"123 Main St\", \"city\": \"jaipur\", \"state\": \"Example State\", \"zipCode\": \"12545\" },\r\n        \"lookingTo\": \"rent\",\r\n        \"areaUnit\": 1500,\r\n        \"BHK\": \"secondhand\",\r\n        \"landlord\": \"John\",\r\n        \"description\": \"Beautiful house for sale in a quiet neighborhood.\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/property/registerProperty",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"property",
+						"registerProperty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"john@example.com\",\r\n  \"password\": \"Password@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/users/login",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get singal property ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/property/property/663b1abb816586e6b9b89019",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"property",
+						"property",
+						"663b1abb816586e6b9b89019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all property",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/property/allProperty",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"property",
+						"allProperty"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "12345",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search all property",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/property/allProperty?keyword=12345",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"property",
+						"allProperty"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "12345"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/property/deleteProperty singal",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/property/deleteProperty/663b1abb816586e6b9b89019",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"property",
+						"deleteProperty",
+						"663b1abb816586e6b9b89019"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
